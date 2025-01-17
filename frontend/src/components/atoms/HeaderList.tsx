@@ -13,7 +13,7 @@ export type HeaderListProps = {
 const HeaderList = ({ id, link, text }: HeaderListProps) => {
   return (
     <Link key={id} href={link} className="mr-8">
-      <p className="text-lg">{text}</p>
+      <p className="text-base">{text}</p>
     </Link>
   );
 };
