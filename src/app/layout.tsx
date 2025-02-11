@@ -13,7 +13,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 import "../styles/globals.css";
 
 // components
-// import ClientLayout from "@/components/organisms/ClientLayout";
+import ClientLayout from "@/components/organisms/ClientLayout";
 
 export const metadata: Metadata = {
   title: "NEO TOKYO | 新たな不動産の価値を創出する",
@@ -28,8 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={ibmPlexMono.variable}>
-        {/* <ClientLayout>{children}</ClientLayout> */}
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
