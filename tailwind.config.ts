@@ -11,8 +11,9 @@ export default {
     extend: {
       variants: { extend: { overflow: ["hover", "focus"] } },
       fontFamily: {
+        ibm: "var(--font-ibm), sans-serif",
         melete: ["Melete", "sans-serif"],
-        mono: ["IBM Plex Mono", "monospace"],
+        apex: ["Apex", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

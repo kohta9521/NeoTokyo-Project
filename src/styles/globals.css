@@ -17,6 +17,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Apex";
+  src: url("/fonts/Apex Mk3-Medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Apex";
+  src: url("/fonts/Apex Mk3-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
 :root {
   /* color */
   --background: black;
@@ -26,10 +40,12 @@
   --red: #ff0004;
   --purple: #9900ff;
   --blue: #4000ff;
+
+  --border-gray: #4d4d4d;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-ibm, sans-serif);
 }
