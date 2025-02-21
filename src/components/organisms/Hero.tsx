@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 // next
 import Image from "next/image";
-import Link from "next/link";
 
-// icons
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
+// data
+import { heroImageData } from "@/data/heroImageData";
+
+// components
+import HeroImageCard from "../molecules/HeroImageCard";
 
 const Hero = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="relative w-screen sm:w-[96vw] h-screen bg-black">
       <Image
@@ -18,11 +22,11 @@ const Hero = () => {
         // objectFit="fit"
         alt="hero-image"
       />
-      <div className="absolute top-1/4 sm:top-[33%]">
+      <div className="absolute top-44 h-auto">
         <p className="font-semibold text-base sm:text-2xl mb-1 sm:mb-3 ml-6 sm:ml-[75px] text-[var(--pink)]">
           あらゆる人のニューノーマルを創る
         </p>
-        <h1 className="text-6xl sm:text-9xl font-semibold mb-5 sm:mb-10 ml-6 sm:ml-[70px] text-gray-100">
+        <h1 className="text-6xl sm:text-8xl font-semibold mb-5 sm:mb-10 ml-6 sm:ml-[70px] text-gray-100">
           Redefining perspectives and creating new values to shape the future.
         </h1>
         <p className="text-sm sm:text-xl ml-6 sm:ml-[80px] mb-12 text-gray-400">
@@ -30,18 +34,19 @@ const Hero = () => {
           entirely new field, realizing its potential, and spreading it across
           the world.
         </p>
-        <Link
-          href="/#about"
-          className="inline-flex ml-6 sm:ml-[80px] items-center justify-center w-56 h-12 border border-[var(--pink)] rounded-full text-[var(--pink)] font-medium text-lg transition-all duration-300 hover:bg-[var(--pink)] hover:text-white group"
-        >
-          <span className="mr-3 transition-transform duration-300 group-hover:translate-x-1">
-            View More !
-          </span>
-          <IoArrowForwardCircleSharp
-            size={24}
-            className="transition-transform duration-300 group-hover:translate-x-1"
+      </div>
+      <div className="absolute left-6 bottom-20 w-[90%] h-[550px] border border-white flex gap-4 px-8">
+        {heroImageData.map((data, index) => (
+          <HeroImageCard
+            key={data.id}
+            image={data.image}
+            title={data.title}
+            description={data.description}
+            link={data.link}
+            isActive={index === activeIndex}
+            onClick={() => setActiveIndex(index)}
           />
-        </Link>
+        ))}
       </div>
     </div>
   );
